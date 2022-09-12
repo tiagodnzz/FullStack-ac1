@@ -24,7 +24,7 @@ def gravar():
   if nome and cpf and email:
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute('insert into tbl_user (user_name, user_cpf, user_email) VALUES (%s, %s, %s)', (nome, cpf, email))
+    cursor.execute('insert into tbl_user (user_nome, user_cpf, user_email) VALUES (%s, %s, %s)', (nome, cpf, email))
     conn.commit()
   return render_template('index.html')
 
@@ -33,7 +33,7 @@ def gravar():
 def listar():
   conn = mysql.connect()
   cursor = conn.cursor()
-  cursor.execute('select user_name, user_cpf, user_email from tbl_user')
+  cursor.execute('select user_nome, user_cpf, user_email from tbl_user')
   data = cursor.fetchall()
   conn.commit()
   return render_template('lista.html', datas=data)
@@ -49,4 +49,4 @@ if __name__ == "__main__":
 
     # use teste;
 
-    # CREATE TABLE tbl_user ( user_id BIGINT NOT NULL AUTO_INCREMENT, user_name VARCHAR(45) NULL, user_cpf VARCHAR(45) NULL, user_email VARCHAR(45) NULL, PRIMARY KEY (user_id));
+    # CREATE TABLE tbl_user ( user_id BIGINT NOT NULL AUTO_INCREMENT, user_nome VARCHAR(45) NULL, user_cpf VARCHAR(45) NULL, user_email VARCHAR(45) NULL, PRIMARY KEY (user_id));
