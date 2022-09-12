@@ -45,4 +45,8 @@ if __name__ == "__main__":
 
     # SQL
 
+    # create schema teste;
+
+    # use teste;
+
     # CREATE TABLE tbl_user ( user_id BIGINT NOT NULL AUTO_INCREMENT, user_name VARCHAR(45) NULL, user_cpf VARCHAR(45) NULL, user_email VARCHAR(45) NULL, PRIMARY KEY (user_id));
